@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype Assembly Quote | FC Design Services</title>
+  <meta name="description" content="Get an instant prototype PCB assembly quote from FC Design Services. Enter your board details and component counts for a real-time estimate.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ========== HEADER START ========== -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="images/logo_FCDS.png" alt="FC Design Services" width="280" height="158">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ========== HEADER END ========== -->
+
+<main id="main-content">
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>Manual Prototype Assembly Quote</h1>
+      <p>Get an instant estimate for your prototype PCB assembly project.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container">
+      <div class="quote-calculator" style="max-width: 800px; margin: 0 auto;">
+
+        <form id="quote-form" class="contact-form">
+
+          <!-- Quantity -->
+          <div class="form-group">
+            <label for="quantity">Board Quantity (1-10) <span class="required">*</span></label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" value="5" required>
+            <small class="form-help">For quantities over 10, <a href="contact.html">contact us</a> for a custom quote.</small>
+          </div>
+
+          <!-- Double-sided -->
+          <div class="form-group">
+            <label>Double-sided board? <span class="required">*</span></label>
+            <div class="toggle-group">
+              <label class="toggle-option">
+                <input type="radio" name="double_sided" value="no" checked> No
+              </label>
+              <label class="toggle-option">
+                <input type="radio" name="double_sided" value="yes"> Yes
+              </label>
+            </div>
+          </div>
+
+          <!-- SMT Components -->
+          <fieldset class="form-fieldset">
+            <legend>SMT Component Counts (total across all sides)</legend>
+            <p class="form-help">Enter the number of placements for each tier. Not sure how to classify? See the descriptions below each field.</p>
+
+            <div class="form-group">
+              <label for="t1a">T1a: Small Passives</label>
+              <input type="number" id="t1a" name="t1a" min="0" value="0">
+              <small class="form-help">0201, 0402 resistors/capacitors/inductors, SOD-523, SC-70</small>
+            </div>
+
+            <div class="form-group">
+              <label for="t1b">T1b: Standard Passives</label>
+              <input type="number" id="t1b" name="t1b" min="0" value="0">
+              <small class="form-help">0603, 0805, 1206, 1210 resistors/capacitors/inductors, SOT-23, LEDs, SOD-123</small>
+            </div>
+
+            <div class="form-group">
+              <label for="t2">T2: Standard ICs</label>
+              <input type="number" id="t2" name="t2" min="0" value="0">
+              <small class="form-help">SOIC, TSSOP, QFN (32 pin or fewer), SOT-223, small connectors (PicoBlade, FH12)</small>
+            </div>
+
+            <div class="form-group">
+              <label for="t3">T3: Fine-Pitch / Large Components</label>
+              <input type="number" id="t3" name="t3" min="0" value="0">
+              <small class="form-help">QFP, QFN (over 32 pin), LQFP, large connectors (HDMI, USB-C, SD card, RJ45)</small>
+            </div>
+
+            <div class="form-group">
+              <label for="t4">T4: BGA / LGA</label>
+              <input type="number" id="t4" name="t4" min="0" value="0">
+              <small class="form-help">Any ball-grid array, land-grid array, or package-on-package</small>
+            </div>
+          </fieldset>
+
+          <!-- THT Components -->
+          <fieldset class="form-fieldset">
+            <legend>Through-Hole Components</legend>
+
+            <div class="form-group">
+              <label for="tht_components">Number of THT Components</label>
+              <input type="number" id="tht_components" name="tht_components" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+              <label for="tht_pins">Total THT Pins</label>
+              <input type="number" id="tht_pins" name="tht_pins" min="0" value="0">
+              <small class="form-help">Total pin count across all through-hole components</small>
+            </div>
+          </fieldset>
+
+          <!-- BOM and PCB costs -->
+          <fieldset class="form-fieldset">
+            <legend>Material Costs (optional)</legend>
+            <p class="form-help">FCDS requires full turn-key sourcing by our internal team. Material costs are marked up to account for purchasing time and material handling. If you know your per-board costs, enter them below to include in the estimate.</p>
+
+            <div class="form-group">
+              <label for="bom_cost">Per-Board BOM Cost ($)</label>
+              <input type="number" id="bom_cost" name="bom_cost" min="0" step="0.01" value="0" placeholder="0.00">
+            </div>
+
+            <div class="form-group">
+              <label for="pcb_cost">Per-Board PCB Cost ($)</label>
+              <input type="number" id="pcb_cost" name="pcb_cost" min="0" step="0.01" value="0" placeholder="0.00">
+            </div>
+          </fieldset>
+
+          <!-- Timeline -->
+          <div class="form-group">
+            <label for="timeline">Lead Time <span class="required">*</span></label>
+            <select id="timeline" name="timeline" required>
+              <option value="5">5 weeks (standard)</option>
+              <option value="4">4 weeks</option>
+              <option value="3">3 weeks</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="quote-submit" style="width: 100%;">Get Estimate</button>
+        </form>
+
+        <!-- Result -->
+        <div id="quote-result" class="quote-result" style="display: none;">
+          <h2>Your Estimate</h2>
+          <div class="quote-totals">
+            <div class="quote-total-line">
+              <span>Estimated Total</span>
+              <span class="quote-amount" id="result-total">$0</span>
+            </div>
+            <div class="quote-total-line">
+              <span>Per-Unit Price</span>
+              <span class="quote-amount" id="result-per-unit">$0</span>
+            </div>
+          </div>
+          <div id="quote-warnings"></div>
+          <p class="form-help" style="margin-top: 1rem;">This is an estimate for prototype assembly. For quantities over 10 or production runs, <a href="contact.html">contact us</a> for a custom quote.</p>
+          <p class="form-help"><strong>Disclaimer:</strong> This estimate is for reference only. FCDS will validate all information upon receipt of your manufacturing package. Final pricing is subject to change.</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Request a Formal Quote</a>
+        </div>
+
+        <!-- Error -->
+        <div id="quote-error" class="form-error" style="display: none;" role="alert"></div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== FOOTER START ========== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="images/logo_FCDS.png" alt="FC Design Services" width="200" height="113">
+        <p>Customized Product Design Solutions for Every Project</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <address>
+          757 Reading Rd, Suite B2b<br>
+          Mason, OH 45040<br><br>
+          <a href="tel:+15132049621">Phone: (513) 204-9621</a><br>
+          <a href="mailto:gabby.ginn@fcdesignservices.com">gabby.ginn@fcdesignservices.com</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 FC Design Services LLC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<!-- ========== FOOTER END ========== -->
+
+<script src="js/main.js" defer></script>
+<script src="js/quote-calculator.js" defer></script>
+</body>
+</html>
