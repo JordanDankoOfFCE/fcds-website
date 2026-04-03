@@ -12,6 +12,9 @@ desktop.ini
 # Claude Code
 .claude/
 
+# Wrangler
+worker/.wrangler/
+
 # Misc
 *.log
 node_modules/
