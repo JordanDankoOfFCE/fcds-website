@@ -83,7 +83,8 @@ function calculateQuote(input) {
   const inspectionCharge = inspectionCostTotal * INSPECTION_MARKUP;
 
   // SG&A
-  const sgaCharge = SGA_DAILY_RATE * SGA_DAYS;
+  const sgaDays = input.double_sided ? SGA_DAYS + 0.5 : SGA_DAYS;
+  const sgaCharge = SGA_DAILY_RATE * sgaDays;
 
   // Subtotal
   const subtotal = nreCharge + stencilCharge + consumablesCharge +
@@ -94,7 +95,8 @@ function calculateQuote(input) {
   const rushPct = RUSH[input.timeline] || 0;
   const rushCharge = subtotal * rushPct;
 
-  const total = subtotal + rushCharge;
+  const totalRaw = subtotal + rushCharge;
+  const total = Math.round(totalRaw / 50) * 50;
   const perUnit = total / qty;
 
   // Warnings
