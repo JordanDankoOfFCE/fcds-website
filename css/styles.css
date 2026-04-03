@@ -5,7 +5,9 @@
 :root {
   --color-navy: #262D63;
   --color-teal: #276E8B;
-  --color-cyan: #3AC4ED;
+  --color-cyan: #1AB5F1;
+  --color-orange: #E59500;
+  --color-fern: #537A5A;
   --color-white: #FFFFFF;
   --color-light-gray: #F5F7FA;
   --color-dark-gray: #333333;
@@ -142,13 +144,13 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--color-teal);
+  background-color: var(--color-orange);
   color: var(--color-white);
-  border-color: var(--color-teal);
+  border-color: var(--color-orange);
 }
 
 .btn-primary:hover {
-  background-color: #1f5a72;
+  background-color: #c47e00;
   color: var(--color-white);
 }
 
@@ -165,12 +167,12 @@ p {
 
 .btn-outline-dark {
   background-color: transparent;
-  color: var(--color-teal);
-  border-color: var(--color-teal);
+  color: var(--color-orange);
+  border-color: var(--color-orange);
 }
 
 .btn-outline-dark:hover {
-  background-color: var(--color-teal);
+  background-color: var(--color-orange);
   color: var(--color-white);
 }
 
@@ -203,14 +205,16 @@ p {
   background: var(--color-white);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 100;
-  height: var(--header-height);
+  min-height: var(--header-height);
 }
 
 .site-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  min-height: var(--header-height);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .logo img {
@@ -300,7 +304,7 @@ p {
    =========================== */
 
 .hero {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal) 100%);
+  background: var(--color-navy);
   color: var(--color-white);
   padding: 2.5rem 1.5rem;
   text-align: center;
@@ -334,7 +338,7 @@ p {
    =========================== */
 
 .page-banner {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal) 100%);
+  background: var(--color-navy);
   color: var(--color-white);
   padding: 2rem 1.5rem;
   text-align: center;
@@ -427,7 +431,7 @@ p {
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid var(--color-teal);
+  border-left: 4px solid var(--color-orange);
 }
 
 .testimonial blockquote {
@@ -449,7 +453,7 @@ p {
    =========================== */
 
 .cta-banner {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal) 100%);
+  background: var(--color-fern);
   color: var(--color-white);
   text-align: center;
   padding: 2rem 1.5rem;
@@ -471,8 +475,11 @@ p {
    =========================== */
 
 .service-detail {
-  padding: 3rem 0;
+  padding: 1.5rem 0;
   border-bottom: 1px solid var(--color-border);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .service-detail:last-child {
@@ -481,24 +488,28 @@ p {
 
 .service-detail h3 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Process Steps */
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
 .process-step {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   background: var(--color-white);
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: none;
+  text-align: left;
+  font-family: var(--font-primary);
+  width: 100%;
 }
 
 .process-number {
@@ -508,11 +519,12 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--color-teal);
+  background: var(--color-fern);
   color: var(--color-white);
   font-weight: 700;
   font-size: 1.1rem;
   flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
 .process-step h3 {
@@ -520,10 +532,18 @@ p {
   font-size: 1rem;
 }
 
+.process-desc {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-medium-gray);
+}
+
 .service-detail ul {
   list-style: disc;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
+  text-align: left;
+  display: inline-block;
 }
 
 .service-detail li {
@@ -537,6 +557,8 @@ p {
 
 .about-content {
   max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .about-content p {
@@ -557,6 +579,7 @@ p {
   font-style: italic;
   color: var(--color-navy);
   margin-bottom: 0;
+  text-align: center;
 }
 
 .team-grid {
@@ -910,6 +933,10 @@ p {
   }
 
   .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-steps {
     grid-template-columns: repeat(2, 1fr);
   }
 

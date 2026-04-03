@@ -28,6 +28,17 @@
   });
 })();
 
+/* Process Step Expand/Collapse */
+(function () {
+  var steps = document.querySelectorAll('.process-step[aria-expanded]');
+  steps.forEach(function (step) {
+    step.addEventListener('click', function () {
+      var expanded = step.getAttribute('aria-expanded') === 'true';
+      step.setAttribute('aria-expanded', String(!expanded));
+    });
+  });
+})();
+
 /* Contact Form Success Message */
 (function () {
   if (window.location.search.indexOf('sent=true') !== -1) {
