@@ -423,6 +423,7 @@ p {
 .testimonial-grid {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   gap: 1.5rem;
 }
 
@@ -1012,6 +1013,10 @@ p {
 
   .testimonial-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonial-grid .testimonial:last-child:nth-child(3n+1) {
+    grid-column: 2;
   }
 
   .process-steps {
